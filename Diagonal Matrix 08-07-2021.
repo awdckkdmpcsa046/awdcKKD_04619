@@ -1,0 +1,68 @@
+import java.util.*;
+class Matrix 
+{
+  public static void main (String[]args) 
+  {
+    int a[][] = new int[3][3];
+    int i, j, flag = 0;
+    Scanner sc = new Scanner (System.in);
+    for (i = 0; i < 3; i++)
+      { 
+     for (j = 0; j < 3; j++)
+	   {
+	  System.out.print ("Enter elements [" + i + "][" + j + "]");
+	    a[i][j] = sc.nextInt ();
+      }
+      }
+    System.out.println ("Matrix is");
+    for (i = 0; i < 3; i++)
+      {
+	for (j = 0; j < 3; j++)
+	    {
+	    System.out.print (a[i][j] + " ");
+      }
+	System.out.println ();
+      }
+    for (i = 0; i < 3; i++)
+      {
+	for (j = 0; j < 3; j++)
+	   {
+	    if (i == j && a[i][j] == 0)
+	       {
+		flag = 1;
+		break;
+	      }
+	    else if (i != j && a[i][j] != 0)
+	      {
+		flag = 1;
+		break;
+	      }
+        }
+      }
+    if (flag == 0)
+      System.out.println ("DIAGONAL MATRIX");
+    else
+      System.out.println ("NOT A DIAGONAL MATRIX");
+  }
+}
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+OUTPUT:
+C:\Users\hp>javac Matrix.java
+C:\Users\hp>java Matrix
+Enter elements [0][0]1
+Enter elements [0][1]0
+Enter elements [0][2]0
+Enter elements [1][0]0
+Enter elements [1][1]2
+Enter elements [1][2]0
+Enter elements [2][0]0
+Enter elements [2][1]0
+Enter elements [2][2]3
+Matrix is
+1 0 0
+0 2 0
+0 0 3
+DIAGONAL MATRIX
+
+
+
